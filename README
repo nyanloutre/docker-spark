@@ -1,0 +1,13 @@
+# Utilisation
+
+Pour démarrer un Master :
+
+docker run -d -t -p 8080:8080 --name spark_master spark /start-master.sh
+
+Pour démarer un worker :
+
+docker run -d -t --link spark_master:spark_master spark /start-worker.sh
+
+Pour se connecter avec un shell sur ce master :
+
+docker run -i -t --link spark_master:spark_master spark /spark-shell.sh
