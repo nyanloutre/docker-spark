@@ -2,4 +2,4 @@
 /usr/local/bin/spark-class org.apache.spark.deploy.worker.Worker \
 	spark://localhost:7077 \
 	--properties-file /spark-defaults.conf
-/bin/bash
+tail -f /dev/null
