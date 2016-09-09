@@ -2,12 +2,12 @@
 
 Pour démarrer un Master :
 
-docker run -d -t -p 8080:8080 --name spark_master spark /start-master.sh
+docker service create --name spark_master -p 8080:8080 nyanloutre/spark /start-master.sh
 
-Pour démarer un worker :
+Pour démarer un worker sur chaque noeud :
 
-docker run -d -t --link spark_master:spark_master spark /start-worker.sh
+docker service create --name spark_worker --mode global nyanloutre/spark /start-worker.sh
 
 Pour se connecter avec un shell sur ce master :
 
-docker run -i -t --link spark_master:spark_master spark /spark-shell.sh
+docker run -i -t nyanloutre/spark /spark-shell.sh
