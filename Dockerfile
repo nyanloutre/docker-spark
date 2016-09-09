@@ -1,4 +1,4 @@
-FROM java
+FROM openjdk
 
 MAINTAINER "Paul TREHIOU <paul.trehiou@gmail.com>"
 
